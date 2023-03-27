@@ -1,1 +1,0 @@
-export const OPEN_WEATHER_APPID = "1010101";
