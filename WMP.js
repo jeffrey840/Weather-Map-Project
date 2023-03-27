@@ -1,3 +1,7 @@
+import {OPEN_WEATHER_APPID} from "./keys";
+
+import( OPEN_WEATHER_APPID)
+
 // setting up global variables to call the data from Weather Map
 //latitude and longitude are  set to Dallas
 let longitude = -96.7969
@@ -111,6 +115,17 @@ $(".btn").click(function (e) {
 	})
 
 })
+
+import { createClient } from 'pexels';
+
+const client = createClient('YOUR_API_KEY');
+
+client.photos.show({ id: 2014422 }).then(photo => {
+	console.log(photo)
+});
+
+
+
 
 //refactor todo's:
 //make the map take up 90% of the height.

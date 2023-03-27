@@ -1,0 +1,7 @@
+{
+  "name": "Weather-Map-Project",
+  "version": "1.0.0",
+  "dependencies": {
+    "pexels": "^1.4.0"
+  }
+}
