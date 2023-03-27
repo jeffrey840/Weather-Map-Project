@@ -1,6 +1,4 @@
-import {OPEN_WEATHER_APPID} from "./keys";
 
-import( OPEN_WEATHER_APPID)
 
 // setting up global variables to call the data from Weather Map
 //latitude and longitude are  set to Dallas
@@ -17,6 +15,7 @@ getData();
 // Changing kelvins to imperial: Fahrenheit
 // Defining the 'get' request as a function 'getData' in order to call it multiple times
 function getData() {
+
 	$.get("https://api.openweathermap.org/data/3.0/onecall", {
 		APPID: OPEN_WEATHER_APPID,
 		lat: latitude,
@@ -114,19 +113,14 @@ $(".btn").click(function (e) {
 		getData();
 	})
 
+	// import { createClient } from 'pexels';
+	//
+	// const client = createClient('PEXELS_API_KEY');
+	//
+	// client.photos.show({ id: 2014422 }).then(photo => {
+	// 	console.log(photo)
+	// });
 })
-
-import { createClient } from 'pexels';
-
-const client = createClient('YOUR_API_KEY');
-
-client.photos.show({ id: 2014422 }).then(photo => {
-	console.log(photo)
-});
-
-
-
-
 //refactor todo's:
 //make the map take up 90% of the height.
 //make the header display the current city.
