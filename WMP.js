@@ -1,5 +1,7 @@
 
 
+
+
 // setting up global variables to call the data from Weather Map
 //latitude and longitude are  set to Dallas
 let longitude = -96.7969
@@ -62,7 +64,6 @@ function response(data) {
 	mapboxgl.accessToken = MAPBOX_API_KEY
 	const map = new mapboxgl.Map({
 		container: 'map', // container ID
-		// style: 'mapbox://styles/mapbox/dark-v10', // style URL
 		//gta style for gta
 		style: 'mapbox://styles/adoucett/cjf5k84bp0p7t2rmiwvwikhyn',
 		center: [longitude, latitude], // starting position [lng, lat]
@@ -110,17 +111,33 @@ $(".btn").click(function (e) {
 	geocode(searchInput, MAPBOX_API_KEY).then(function (data) {
 		longitude = data[0];
 		latitude = data[1];
+
 		getData();
 	})
 
-	// import { createClient } from 'pexels';
-	//
-	// const client = createClient('PEXELS_API_KEY');
-	//
-	// client.photos.show({ id: 2014422 }).then(photo => {
-	// 	console.log(photo)
-	// });
+
 })
+
+// $(".btn").click(function (e) {
+// 	e.preventDefault();
+// 	let searchInput = $("#input").val();
+// 	geocode(searchInput, MAPBOX_API_KEY).then(function (data) {
+// 		longitude = data[0];
+// 		latitude = data[1];
+//
+// 		// Fly to the searched location
+// 		map.flyTo({
+// 			center: [longitude, latitude],
+// 			zoom: 14,
+// 			speed: 0.6,
+// 			curve: 1
+// 		});
+//
+// 		getData();
+// 	});
+// });
+
+
 //refactor todo's:
 //make the map take up 90% of the height.
 //make the header display the current city.
